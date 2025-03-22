@@ -6,8 +6,11 @@ import ObserverPattern.Observable.StocksObservable;
 import ObserverPattern.Observer.EmailAlertObserverImpl;
 import ObserverPattern.Observer.MobileAlertObserverImpl;
 import ObserverPattern.Observer.NotificationAlertObserver;
+import java.util.logging.Logger;
 
 public class Store {
+    private static final Logger logger = Logger.getLogger(Store.class.getName()); // Create Logger instance
+
     public static void main(String[] args){
         StocksObservable iPhoneObservable = new IPhoneObservableImpl();
 
@@ -16,7 +19,9 @@ public class Store {
         iPhoneObservable.add(user1);
         iPhoneObservable.add(user2);
         iPhoneObservable.setStockCount(10);
-        System.out.println(iPhoneObservable.getStockCount());
+        logger.info("Current iPhone stock count: " + iPhoneObservable.getStockCount()); // Logging instead of println
+
+
         StocksObservable cookieObservable = new CookieObservableImpl();
         NotificationAlertObserver user3 = new EmailAlertObserverImpl("email@example.com", cookieObservable);
         cookieObservable.add(user3);

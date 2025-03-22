@@ -26,5 +26,6 @@ public class Store {
         NotificationAlertObserver user3 = new EmailAlertObserverImpl("email@example.com", cookieObservable);
         cookieObservable.add(user3);
         cookieObservable.setStockCount(5);
+        logger.info("Current cookie stock count: " + cookieObservable.getStockCount()); // Logging instead of println
     }
 }

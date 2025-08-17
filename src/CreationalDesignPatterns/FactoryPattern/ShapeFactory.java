@@ -1,7 +1,7 @@
 package CreationalDesignPatterns.FactoryPattern;
 
 public class ShapeFactory {
-    Shape getShape(String input){
+    static Shape getShape(String input){
         switch (input){
             case "Circle":
                 return new Circle();

@@ -3,8 +3,8 @@ package CreationalDesignPatterns.FactoryPattern;
 
 public class Main {
     public static void main(String [] args){
-        ShapeFactory sf=new ShapeFactory();
-        Shape shape=sf.getShape("Circle");
+        Shape shape=ShapeFactory.getShape("Circle");
+        assert shape != null;
         shape.draw();
     }
 }

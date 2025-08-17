@@ -18,9 +18,7 @@ public class MovieController {
     }
     //ADD movie to a particular city, make use of cityVsMovies map
     public void addMovie(Movie movie, City city) {
-
         allMovies.add(movie);
-
         List<Movie> movies = cityVsMovies.getOrDefault(city, new ArrayList<>());
         movies.add(movie);
         cityVsMovies.put(city, movies);
@@ -34,8 +32,6 @@ public class MovieController {
         }
         return null;
     }
-
-
     public List<Movie> getMoviesByCity(City city) {
         return cityVsMovies.get(city);
     }

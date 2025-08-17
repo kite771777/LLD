@@ -6,11 +6,6 @@ public class Movie {
     String movieName;
     int movieDurationInMinutes;
 
-    public Movie(int i, String movieName, int movieDurationInMinutes) {
-        this.movieId = i;
-        this.movieName = movieName;
-        this.movieDurationInMinutes = movieDurationInMinutes;
-    }
     //other details like Genere, Language etc.
 
     public int getMovieId() {

@@ -106,7 +106,6 @@ public class BookMyShow {
         movieController.addMovie(baahubali, City.Bangalore);
         movieController.addMovie(baahubali, City.Delhi);
     }
-
     //creating 2 theatre
     private void createTheatre() {
 

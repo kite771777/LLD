@@ -1,7 +1,7 @@
 package StrategyPattern;
 
-import StrategyPattern.Strategy.NormalDriveStrategy;
+import StrategyPattern.Strategy.DriveStrategy;
 
 public class OffRoadVehicle extends Vehicle {
-    OffRoadVehicle(){super(new NormalDriveStrategy());}
+    OffRoadVehicle(DriveStrategy driveStrategy){super(driveStrategy);}
 }

@@ -1,10 +1,14 @@
 package CreationalDesignPatterns.Singleton;
 
-public class Singleton {
+import java.io.Serializable;
+
+public class Singleton implements Serializable, Cloneable{
     private static Singleton instance;
     // 1. Private constructor
     private Singleton() {
-        System.out.println("Singleton instance created");
+//        if(instance!=null) {
+//            throw new RuntimeException("You are trying to to break singleton pattern");
+//        }
     }
 
     // 2. Public static method to provide access
@@ -16,6 +20,16 @@ public class Singleton {
                 }
             }
         }
+        return instance;
+    }
+
+    public Object readResolve(){
+        return instance;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        //return super.clone();
         return instance;
     }
 }

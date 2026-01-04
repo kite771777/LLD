@@ -1,4 +1,4 @@
-package StructuralDesignPattern;
+package StructuralDesignPattern.Adapter;
 
 public class Iphone {
     private final IphoneCharger  iphoneCharger;

@@ -1,6 +1,6 @@
-package DecoratorPattern.Toppings;
+package StructuralDesignPattern.Decorator.Toppings;
 
-import DecoratorPattern.Pizza.BasePizza;
+import StructuralDesignPattern.Decorator.Pizza.BasePizza;
 
 public class ExtraCheese extends ToppingDecorator{
     BasePizza basePizza;

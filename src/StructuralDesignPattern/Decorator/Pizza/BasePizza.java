@@ -1,4 +1,4 @@
-package DecoratorPattern.Pizza;
+package StructuralDesignPattern.Decorator.Pizza;
 
 public abstract class BasePizza {
     public abstract int cost();

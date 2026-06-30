@@ -1,0 +1,9 @@
+package Problems.SnacknLadder;
+
+public class Jump {
+
+    int start;
+    int end;
+
+    //getters and setters
+}

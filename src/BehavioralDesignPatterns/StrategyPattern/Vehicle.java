@@ -1,0 +1,13 @@
+package BehavioralDesignPatterns.StrategyPattern;
+
+import BehavioralDesignPatterns.StrategyPattern.Strategy.DriveStrategy;
+
+public class Vehicle {
+    DriveStrategy driveObject;
+    Vehicle(DriveStrategy driveObject){
+        this.driveObject = driveObject;
+    }
+    public void drive(){
+        driveObject.drive();
+    }
+}

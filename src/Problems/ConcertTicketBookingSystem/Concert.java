@@ -9,7 +9,7 @@ public class Concert {
     private final String venue;
     private final LocalDateTime dateTime;
     private final List<Seat> seats;
-    public Concert(String id, String artist, String venue, LocalDateTime dateTime) {
+    public Concert(String id, String artist, String venue, LocalDateTime dateTime, List<Seat> seats) {
         this.id = id;
         this.artist = artist;
         this.venue = venue;

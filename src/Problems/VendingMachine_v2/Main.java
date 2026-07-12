@@ -2,17 +2,26 @@ package Problems.VendingMachine_v2;
 
 public class Main {
     public static void main(String[] args) {
-        VendingMachine vendingMachine = new VendingMachine();
-        Item item1=new Item("101","COKE",100);
-        Item item2=new Item("102","PEPSI",100);
-        Item item3=new Item("103","SODA",100);
-        Item item4=new Item("104","WATER",100);
-        vendingMachine.addStock("101","COKE",item1,10);
-        vendingMachine.addStock("102","PEPSI",item2,10);
-        vendingMachine.addStock("103","SODA",item3,10);
-        vendingMachine.addStock("104","WATER",item4,10);
+        VendingMachine machine = new VendingMachine();
+        Item coke = new Item("101", "COKE", 60);
+        Item pepsi = new Item("102", "PEPSI", 50);
 
+        machine.addStock(coke, 5);
+        machine.addStock(pepsi, 5);
 
+        System.out.println("----- TEST SCENARIO 1: Happy Path -----");
+        machine.insertCoin(Coin.TEN);      // Moves to HasMoneyState
+        machine.insertCoin(Coin.HUNDRED);  // Balance: 110
+        machine.selectItem("101");         // Select Coke (Price: 60), Moves to ItemSelectedState
+        machine.dispense();                // Dispenses Coke, returns 50 Rs change, Moves back to IdleState
 
+        System.out.println("\n----- TEST SCENARIO 2: Insufficient Funds -----");
+        machine.insertCoin(Coin.TEN);
+        machine.insertCoin(Coin.TEN);      // Balance: 20
+        machine.selectItem("102");         // Select Pepsi (Price: 50)
+        machine.dispense();                // Fails, auto-refunds 20 Rs
+
+        System.out.println("\n----- TEST SCENARIO 3: Invalid Action (Dispensing while Idle) -----");
+        machine.dispense();                // Should show error message
     }
 }

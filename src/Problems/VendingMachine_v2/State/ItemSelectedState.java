@@ -11,6 +11,7 @@ public class ItemSelectedState extends State{
     public void refund() {
         System.out.println("Transaction cancelled. Returning: " + machine.getCurrentBalance() + " Rs.");
         machine.getCurrentTransactionCoins().clear();
+        machine.setSelectedItemCode(null);
         machine.setState(new IdleState(machine));
     }
     @Override

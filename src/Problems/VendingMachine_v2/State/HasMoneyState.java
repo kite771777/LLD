@@ -10,18 +10,19 @@ public class HasMoneyState extends State{
     @Override
     public void insertCoin(Coin coin) {
         System.out.println("Coin inserted: " + coin.getValue() + " Rs.");
-        machine.insertCoin(coin);
+        machine.addCoinToBalance(coin);
     }
+
     @Override
-    public void selectItem(String code){
-        if(!machine.getInventory().checkAvailability(code)){
-            System.out.println("Item not available!");
-        }
-        else{
+    public void selectItem(String code) {
+        if (!machine.getInventory().checkAvailability(code)) {
+            System.out.println("Item not available! Please try another code.");
+        } else {
             machine.setSelectedItemCode(code);
             machine.setState(new ItemSelectedState(machine));
         }
     }
+
     @Override
     public void refund() {
         System.out.println("Transaction cancelled. Returning: " + machine.getCurrentBalance() + " Rs.");

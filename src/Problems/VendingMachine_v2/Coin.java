@@ -4,7 +4,8 @@ public enum Coin {
     ONE(1),
     TWO(2),
     FIVE(5),
-    TEN(10);
+    TEN(10),
+    HUNDRED(100);
 
     private final int value;
 
